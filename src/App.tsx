@@ -33,12 +33,6 @@ function App() {
   const raceData = [
     // Test
     {
-      date: "Monday 29 September 2025",
-      distance: "Rest",
-      activity: "😴",
-      formatted: "29/9/2025",
-    },
-    {
       date: "Tuesday 30 September 2025",
       distance: "Rest",
       activity: "😴",
@@ -49,13 +43,13 @@ function App() {
       date: "Wednesday 1 October 2025",
       distance: "3.0 km / cross",
       activity: "🚴🏽",
-      formatted: "01/10/2025",
+      formatted: "1/10/2025",
     },
     {
       date: "Thursday 2 October 2025",
       distance: "4.8 km",
       activity: "🏃🏽‍♂️",
-      formatted: "02/10/2025",
+      formatted: "2/10/2025",
     },
     {
       date: "Friday 3 October 2025",
@@ -950,18 +944,17 @@ function App() {
       //? Get next day run data
       if (item.formatted === tomorrowRun()) {
         setTomorrowData(item);
-        console.log(tomorrowData);
       }
     });
   };
 
-  //* load data
+  // //* load data
   useEffect(() => {
     handleCurrentDay();
   }, []);
 
   return (
-    <main className="w-full h-screen pb-7 overflow-y-auto bg-neutral-100 flex gap-9 flex-col items-center justify-start">
+    <main className="w-full h-fit pb-7 overflow-y-auto bg-neutral-100 flex gap-9 flex-col items-center justify-start">
       {/* Header */}
       <header className="w-full min-h-[320px] h-[320px] rounded-b-3xl bg-red-500 text-white flex gap-16 flex-col items-center justify-center">
         <div className="text-center mt-6 space-y-2.5">
@@ -987,7 +980,7 @@ function App() {
           <h2 className="text-blue-950 font-semibold text-2xl">
             Next Training
           </h2>
-          <h2 className="text-blue-950 font-semibold text-sm opacity-80">
+          <h2 className="text-blue-950 font-semibold opacity-80">
             {tomorrowData.distance} {tomorrowData.activity}
           </h2>
         </div>
